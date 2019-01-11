@@ -37,7 +37,7 @@ function showCalendar(month, year) {
         let row = document.createElement('tr')
 
         for (let j = 0; j < 7; j++) {
-            if (i === 0 && j , firstDay){
+            if (i === 0 && j < firstDay){
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode("");
                 cell.appendChild(cellText);
@@ -59,8 +59,8 @@ function showCalendar(month, year) {
 }
 
 function previous () {
-    currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-    currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
     showCalendar(currentMonth, currentYear);
 }
 
